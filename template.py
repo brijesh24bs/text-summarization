@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO,  format='%(asctime)s %(levelname)s %(message)s')
 
-project_name  = 'text-summarizer'
+project_name  = 'text_summarizer'
 
 list_of_files = [
     ".github/workflows/.gitkeep",
@@ -22,6 +22,7 @@ list_of_files = [
     "config/config.yaml",
     "params.yaml",
     "app.py",
+    "main.py",
     "requirements.txt",
     "setup.py",
     "Dockerfile",
@@ -44,3 +45,4 @@ for filepath in list_of_files:
             logging.info(f"Creating empty file: {filepath}")
     else:
         logging.info(f"{filename} already exists")
+
