@@ -7,3 +7,4 @@ data_ingestion_pipeline.run()
 
 data_validation_pipeline = DataValidationPipeline()
 data_validation_pipeline.run()
+

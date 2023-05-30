@@ -2,6 +2,7 @@ from  text_summarizer.config.configuration import ConfigurationManager
 from text_summarizer.components.data_validation import DataValidation
 from text_summarizer.logging import logger
 
+
 class DataValidationPipeline:
     def __init__(self):
         pass
