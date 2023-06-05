@@ -8,13 +8,19 @@ class DataValidationPipeline:
         pass
 
     def run(self):
-        try:
-            logger.info("Data validation pipeline started")
-            config = ConfigurationManager()
-            data_validation_config = config.get_data_validation_config()
-            data_validation = DataValidation(data_validation_config)
-            data_validation.validate_data()
-            logger.info("Data validation pipeline completed")
-        except Exception as e:
-            raise e
+        logger.info("Data validation pipeline started")
+        config = ConfigurationManager()
+        data_validation_config = config.get_data_validation_config()
+        data_validation = DataValidation(data_validation_config)
+        data_validation.validate_data()
+        logger.info("Data validation pipeline completed")
+
+
+if __name__ == "__main__":
+    try:
+        pipeline = DataValidationPipeline()
+        pipeline.run()
+    except Exception as e:
+        logger.exception(e)
+        raise e
 

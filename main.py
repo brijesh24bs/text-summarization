@@ -2,8 +2,7 @@ from text_summarizer.pipeline.data_ingestion_pipeline import DataIngestionTraini
 from text_summarizer.pipeline.data_validation_pipeline import DataValidationPipeline
 from text_summarizer.pipeline.data_transformation_pipeline import DataTransformationPipeline
 from text_summarizer.pipeline.model_training_pipeline import ModelTrainingPipeline
-from text_summarizer.pipeline.model_evaluation_pipeline import ModelEvaluatingPipeline
-from src.text_summarizer.logging import logger
+from text_summarizer.pipeline.model_evaluation_pipeline import ModelEvaluationPipeline
 
 data_ingestion_pipeline = DataIngestionTrainingPipeline()
 data_ingestion_pipeline.run()
@@ -17,5 +16,5 @@ data_transformation_pipeline.run()
 model_training_pipeline = ModelTrainingPipeline()
 model_training_pipeline.run()
 
-model_evaluating_pipeline = ModelEvaluatingPipeline()
+model_evaluating_pipeline = ModelEvaluationPipeline()
 model_evaluating_pipeline.run()

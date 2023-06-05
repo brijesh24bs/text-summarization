@@ -8,15 +8,19 @@ class DataIngestionTrainingPipeline:
         pass
 
     def run(self):
-        try:
-            logger.info("Data ingestion pipeline started")
-            config = ConfigurationManager()
-            data_ingestion_config = config.get_data_ingestion_config()
-            data_ingestion = DataIngestion(data_ingestion_config)
-            data_ingestion.download_file()
-            data_ingestion.extract_zip_file()
-            logger.info("Data ingestion pipeline completed")
+        logger.info("Data ingestion pipeline started")
+        config = ConfigurationManager()
+        data_ingestion_config = config.get_data_ingestion_config()
+        data_ingestion = DataIngestion(data_ingestion_config)
+        data_ingestion.download_file()
+        data_ingestion.extract_zip_file()
+        logger.info("Data ingestion pipeline completed")
 
-        except Exception as e:
-            raise e
 
+if __name__ == "__main__":
+    try:
+        pipeline = DataIngestionTrainingPipeline()
+        pipeline.run()
+    except Exception as e:
+        logger.exception(e)
+        raise e

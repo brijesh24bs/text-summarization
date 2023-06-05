@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 from text_summarizer.entity import DataValidationConfig
 
 
@@ -18,6 +17,7 @@ class DataValidation:
                     validation_data = False
                     with open(self.config.STATUS_FILE, "a") as f:
                         f.write(f"Validation failed for {file}\n")
+                    break
                 else:
                     validation_data = True
                     with open(self.config.STATUS_FILE, "a") as f:
